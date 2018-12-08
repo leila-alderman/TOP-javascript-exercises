@@ -1,4 +1,10 @@
 const palindromes = function(phrase) {
+    // Shorter solution
+    let cleanPhrase = phrase.toLowerCase().replace(/[^A-Za-z]/g, '');
+    let reversePhrase = cleanPhrase.split('').reverse().join('');
+    return cleanPhrase === reversePhrase;
+
+    /*
     let phraseArr = phrase.toLowerCase().split("");
     let punctuation = [' ', '.', '?', '!', ','];
     let cleanPhraseArr = []
@@ -19,6 +25,7 @@ const palindromes = function(phrase) {
     console.log(cleanPhraseArr)
     console.log(phraseArrBackwards);
     return cleanPhrase === phraseBackwards;
+    */
 }
 
 module.exports = palindromes
